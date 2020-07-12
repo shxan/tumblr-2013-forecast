@@ -11,27 +11,27 @@ TBATS was chosen as the best performing method, using last 12 month users as inp
 ## Analysis
 Visualising Tumblr growth, we see a high growth of ~5.5% using the entire time series, and ~1.5% in the last 12 months
 
-![visual](/graphs/A1 - Graph.png)
+![visual](/graphs/graph.png)
 
 Decomposition using STL and plotting ACF/PACF shows:
 * Tapering of trend in recent months
 * High auto correlation
 * Small seasonal impact
 
-![STL](/graphs/A1 - Decomposition.png)
-![PACF](/graphs/A1 - PACF.png)
+![STL](/graphs/decomposition.png)
+![PACF](/graphs/PACF.png)
 
 4 forecast models were compared: ETS (additive, damped), ETS (multiplicative, damped), TBATS, ARIMA
-![Forecast](/graphs/A1 - Forecast plots.png)
+![Forecast](/graphs/forecast-plots.png)
 
 ## Validation
 Model is cross validated using rolling horizon holdout, with past 12 months used for validation since trend has changed.
-![Error](/graphs/A1 - Error.png)
+![Error](/graphs/error.png)
 
 Error plot reveals no conclusion. MAPE is then calculated to determine model to be implemented.
 
 MAPE | L12M | L24M | L36M
-- | - | - | - 
+---- | ---- | ---- | ---- 
 AAdz | 5.09% | 4.31% | 1.68%
 MMdZ | 4.78% | 4.58% | 2.45%
 TBATS | 4.64% | 5.04% | 2.42%
