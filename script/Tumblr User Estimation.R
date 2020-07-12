@@ -27,7 +27,6 @@ abline(v=2012.5)
 
 ##################################################################################
 
-### SUB-QUESTION 1 ###
 # last 37 months growth = 5.47%
 PredLinearHigh_G <- ((UsersTS[38]/UsersTS[1])^(1/(38-1)) -1)
 # last 12 months growth = 1.52%
@@ -55,11 +54,10 @@ PredLinearLowTS <- ts(PredLinearLow_Vector, start=c(2013,6), frequency = 12)
 write.csv(PredLinearHighTS, file = "A1A1 DSB Tumblr Linear High.csv")
 write.csv(PredLinearLowTS, file = "A1A1 DSB Tumblr Linear Low.csv")
 
-# Comments: Using historical 37-month growth, Tumblr is valued at 63.736 billion, but the worldwide user estimated is unrealistic as it is more than world population and hence too high. Using historical 12-month growth, Tumblr is valued at 1.23 billion, which is identical to the case. 37-month historical growth has been steep, like a hockey stick, and we cannot expect it to continue at the same rate.
+# Comments: Using historical 37-month growth, Tumblr is valued at 63.736 billion, but the worldwide user estimated is unrealistic as it is more than world population and hence too high. Using historical 12-month growth, Tumblr is valued at 1.23 billion. 37-month historical growth has been steep, like a hockey stick, and we cannot expect it to continue at the same rate.
 
 ##################################################################################
 
-### SUB-QUESSTION 2 ###
 
 #plot various decompositions into error/noise, trend and seasonality
 MnUsersTS <- UsersTS/1000000 # convert to million users
