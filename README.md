@@ -11,4 +11,35 @@ TBATS was chosen as the best performing method, using last 12 month users as inp
 ## Analysis
 Visualising Tumblr growth, we see a high growth of ~5.5% using the entire time series, and ~1.5% in the last 12 months
 
-![visual](graphs/A1 - Graph.png)
+![visual](/graphs/A1 - Graph.png)
+
+Decomposition using STL and plotting ACF/PACF shows:
+* Tapering of trend in recent months
+* High auto correlation
+* Small seasonal impact
+
+![STL](/graphs/A1 - Decomposition.png)
+![PACF](/graphs/A1 - PACF.png)
+
+4 forecast models were compared: ETS (additive, damped), ETS (multiplicative, damped), TBATS, ARIMA
+![Forecast](/graphs/A1 - Forecast plots.png)
+
+## Validation
+Model is cross validated using rolling horizon holdout, with past 12 months used for validation since trend has changed.
+![Error](/graphs/A1 - Error.png)
+
+Error plot reveals no conclusion. MAPE is then calculated to determine model to be implemented.
+
+MAPE | L12M | L24M | L36M
+- | - | - | - 
+AAdz | 5.09% | 4.31% | 1.68%
+MMdZ | 4.78% | 4.58% | 2.45%
+TBATS | 4.64% | 5.04% | 2.42%
+
+TBATS is chosen based on MAPE for the most recent data 
+
+## Results
+Using TBATS forecast, Tumblr is expected to peak over the next few years (after 2013) and flatten at around 180 million users. Using this inputs in our valuation, we arrive at a firm value of $425 million if Tumblr remains an independent entity. 
+
+## Limitation
+Roughly 3 years of data is used as forecast inputs, which may be insufficient to accurately predict long-term future trend
